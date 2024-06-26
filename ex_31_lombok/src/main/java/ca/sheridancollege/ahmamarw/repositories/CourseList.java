@@ -1,0 +1,15 @@
+package ca.sheridancollege.ahmamarw.repositories;
+
+import java.util.List;
+import ca.sheridancollege.ahmamarw.beans.Course;
+
+public interface CourseList {
+
+    List<Course> getCourseList();
+
+    void emptyList();
+
+	void setCourseList(List<Course> courseList);
+
+	void addCourse(Course course);
+}
