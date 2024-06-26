@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+</head>
+<body>
+    <h2>Appointment Confirmed</h2>
+    <p>Details:</p>
+    <p th:text="'First Name: ' + ${appointment.firstName}"></p>
+    <p th:text="'Last Name: ' + ${appointment.firstName}"></p>
+    <p th:text="'Email: ' + ${appointment.email}"></p>
+    <p th:text="'Appointment Date: ' + ${appointment.appointmentDate}"></p>
+    <p th:text="'Appointment Time: ' + ${appointment.appointmentTime}"></p>
+</body>
+</html>

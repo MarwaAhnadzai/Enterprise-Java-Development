@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+</head>
+<body>
+    <h2>Appointment Form</h2>
+    <form method="post" action="/formPost">
+        First Name: <input type="text" name="firstName" /><br>
+        Last Name: <input type="text" name="lastName" /><br>
+        Email: <input type="email" name="email" /><br>
+        Day: <input type="date" name="appointmentDate" /><br>
+        Time: <input type="time" name="appointmentTime" /><br>
+        <input type="submit" value="Go!" />
+    </form>
+</body>
+</html>
