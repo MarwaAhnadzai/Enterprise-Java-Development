@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Shopping Cart</h2>
+    
+    <!-- Display the list of phones in the shopping cart -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Use Thymeleaf to iterate over the list of phones stored in the model -->
+            <tr th:each="phone : ${phoneList}">
+                <td th:text="${phone.id}"></td>
+                <td th:text="${phone.model}"></td>
+                <td th:text="${phone.price}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Form to add a new phone to the shopping cart -->
+    <h2>Add a Phone</h2>
+    <form action="/insertPhone" method="post">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required><br><br>
+        
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required><br><br>
+        
+        <!-- Add more input fields as needed -->
+        
+        <button type="submit">Add Phone</button>
+    </form>
+</body>
+</html>
