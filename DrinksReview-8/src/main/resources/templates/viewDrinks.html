@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Explore Our Drink List</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #0056b3; /* Darker shade of blue */
+        text-decoration: underline;
+    }
+
+    a.edit {
+        color: #4CAF50; /* Green */
+    }
+
+    a.delete {
+        color: #FF6347; /* Red */
+    }
+</style>
+</head>
+<body>
+    <h1>Discover Our Current Drinks</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Main Ingredient 1</th>
+                <th>Amount 1</th>
+                <th>Main Ingredient 2</th>
+                <th>Amount 2</th>
+                <th>Directions</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="drink : ${drinks}">
+                <td th:text="${drink.id}"></td>
+                <td th:text="${drink.name}"></td>
+                <td th:text="${drink.main1}"></td>
+                <td th:text="${drink.amount1}"></td>
+                <td th:text="${drink.main2}"></td>
+                <td th:text="${drink.amount2}"></td>
+                <td th:text="${drink.directions}"></td>
+                <td><a class="edit" th:href="'/secure/editLink/' + ${drink.id}">Edit</a></td>
+                <td><a class="delete" th:href="'/secure/deleteLink/' + ${drink.id}">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align:center;"><a href="/home">Back to Home</a></p>
+</body>
+</html>
+

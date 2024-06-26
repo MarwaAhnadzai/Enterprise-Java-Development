@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Drink</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin-top: 20px;
+    }
+
+    form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"], input[type="submit"] {
+        width: calc(100% - 22px); /* Adjusted width for better alignment */
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff; /* Blue */
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3; /* Darker Blue */
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #007bff; /* Blue */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <h1>Add Drink</h1>
+    <hr>
+    <form action="#" th:action="@{/secure/addDrink}" th:object="${drink}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required><br><br>
+        <label for="main1">Main Ingredient 1:</label>
+        <input type="text" id="main1" th:field="*{main1}" required><br><br>
+        <label for="amount1">Amount 1:</label>
+        <input type="text" id="amount1" th:field="*{amount1}" required><br><br>
+        <label for="main2">Main Ingredient 2:</label>
+        <input type="text" id="main2" th:field="*{main2}"><br><br>
+        <label for="amount2">Amount 2:</label>
+        <input type="text" id="amount2" th:field="*{amount2}"><br><br>
+        <label for="directions">Directions:</label>
+        <input type="text" id="directions" th:field="*{directions}" required><br><br>
+        <input type="submit" value="Add Drink">
+    </form>
+    <a href="/home">Home</a>
+</body>
+</html>

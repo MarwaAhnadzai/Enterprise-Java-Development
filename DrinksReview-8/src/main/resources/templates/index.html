@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Application</h1>
+    <p>This is the homepage of my application.</p>
+    <p>You can navigate to other pages using the links below:</p>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/view">View Drinks</a></li>
+        <li><a href="/secure/add">Add Drink</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+    <div>
+        <form method="get" action="#" th:action="@{/logout}">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+</body>
+</html>
