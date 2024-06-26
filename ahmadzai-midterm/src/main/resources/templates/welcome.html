@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome, User!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .user-message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, User!</h1>
+    <div class="container">
+        <div class="user-message">
+            <p>Hello, <span th:text="${username}"></span>, here are the users:</p>
+            <h3>Feel free to contact them!</h3>
+        </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.phone}"></td>
+            </tr>
+        </table>
+        <div class="back-button">
+            <a href="/">Back to Main Page</a>
+        </div>
+    </div>
+</body>
+</html>
+
+    
+   
