@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Courses for ' + ${studentName}">Welcome to <span th:text="${studentName}"></span>'s Final</title>
+    <!-- Add any additional CSS or styling links here -->
+</head>
+<body>
+    <h1 th:text="'Courses for ' + ${studentName}">Welcome to <span th:text="${studentName}"></span>'s Final</h1>
+    <ul>
+        <li th:each="course : ${courses}">
+            <span th:text="${course.name}"></span>: <span th:text="${course.grade}"></span>
+        </li>
+    </ul>
+    
+    <a href="/add-course">Add a course</a>
+    <a href="/">Back to index</a>
+    <footer>
+        <hr>
+        <p>Copyright &copy; Sheridan College</p>
+    </footer>
+    <!-- Add any additional scripts or JavaScript here -->
+</body>
+</html>

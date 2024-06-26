@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+    <!-- Add any additional CSS or styling links here -->
+</head>
+<body>
+    <h1>Add a course for <span th:if="${student != null}" th:text="${student.name}">null</span></h1>
+    <form action="/add-course" method="post">
+        <input type="hidden" name="studentId" th:value="${student != null ? student.id : ''}">
+        <label for="courseName">Course name:</label>
+        <input type="text" id="courseName" name="courseName">
+        <br>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade">
+        <br>
+        <button type="submit">Add Course!</button>
+    </form>
+    <a href="/">Back to index</a>
+    <footer>
+        <hr>
+        <p>Copyright &copy; Sheridan College</p>
+    </footer>
+    <!-- Add any additional scripts or JavaScript here -->
+</body>
+</html>

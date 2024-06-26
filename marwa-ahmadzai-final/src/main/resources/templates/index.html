@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Marwa's Final</title>
+    <!-- Add any additional CSS or styling links here -->
+</head>
+<body>
+    <h1>Welcome to Marwa's Final</h1>
+    <p>Select a student to view the courses:</p>
+    <form action="/view-student" method="get">
+   <form action="/view-student" method="get">
+    <label for="studentId">Choose a student:</label>
+    <select name="studentId" id="studentId">
+        <option value="1">Charlie Brown</option>
+        <option value="2">Lucy</option>
+        <!-- Add more options if needed -->
+    </select>
+    <button type="submit">View Courses</button>
+</form>
+
+    <footer>
+        <hr>
+        <p>Copyright &copy; Sheridan College</p>
+    </footer>
+    <!-- Add any additional scripts or JavaScript here -->
+</body>
+</html>
